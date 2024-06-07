@@ -53,7 +53,7 @@ public class Html2DocConverter {
             DirectoryEntry directory = poifs.getRoot();
             directory.createDocument(
                     "WordDocument", is);
-
+            System.out.println("this.outputPath"+this.outputPath);
             fos = new FileOutputStream(this.outputPath);
             poifs.writeFilesystem(fos);
 

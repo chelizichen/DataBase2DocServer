@@ -56,6 +56,9 @@ public class Main {
 
         SimpleDataSource dataSource = new SimpleDataSource();
         if ("1".equals(dbType)) {
+            // mysql5.x 常用 useSSL
+            // 在 mysql 8 中， 使用 jdbc:mysql://localhost:3306/test_db?setUnicode=true&characterEncoding=utf8 即可
+            // 同时jdbc 包也需要修改成8 与 mysql 对应
             dataSource.setJdbcUrl("jdbc:mysql://" + ip + ":" + port + "/" + dbName+"?useSSL=true");
         } else if ("2".equals(dbType)) {
             dataSource.setJdbcUrl("jdbc:oracle:thin:@" + ip + ":" + port + ":" + serviceName);
